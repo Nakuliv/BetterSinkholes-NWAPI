@@ -1,8 +1,8 @@
 # BetterSinkoles-NWAPI
 [![GitHub release](https://flat.badgen.net/github/release/Nakuliv/BetterSinkoles-NWAPI)](https://github.com/Nakuliv/BetterSinkoles-NWAPI/releases/)
-![GitHub downloads](https://flat.badgen.net/github/assets-dl/Nakuliv/BetterSinkoles-NWAPI))
+![GitHub downloads](https://flat.badgen.net/github/assets-dl/Nakuliv/BetterSinkoles-NWAPI)
 
-The idea is taken from the [Exiled BetterSinkholes plugin](https://github.com/warden161/BetterSinkholes2)
+port of [Exiled BetterSinkholes plugin](https://github.com/warden161/BetterSinkholes2)
 # Installation
 1. Download the `BetterSinkoles-NWAPI.dll` and `0Harmony.dll` from the [latest release](https://github.com/Nakuliv/BetterSinkoles-NWAPI/releases/latest)
 2. Put the `BetterSinkoles-NWAPI.dll` in your `plugins` folder (`/PluginAPI/plugins/<port>/`)
