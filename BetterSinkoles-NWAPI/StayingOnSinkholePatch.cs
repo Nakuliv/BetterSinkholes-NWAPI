@@ -19,12 +19,17 @@ namespace BetterSinkoles_NWAPI
                 var ply = Player.Get(player);
                 bool allow = !(ply.Team == Team.SCPs || ply.IsGodModeEnabled);
 
-                if ((double)Vector3.Distance(ply.Position, __instance.transform.position) > (double)__instance.MaxDistance * Plugin.Instance.Config.TeleportDistance)
+                if (!((double)Vector3.Distance(ply.Position, __instance.transform.position) > (double)__instance.MaxDistance * Plugin.Instance.Config.TeleportDistance))
+                {
+                    ply.EffectsManager.DisableEffect<Sinkhole>();
+                    ply.EffectsManager.EnableEffect<Corroding>();
+                    ply.SendBroadcast(Plugin.Instance.Config.TeleportMessage, Plugin.Instance.Config.TeleportMessageDuration);
+                    allow = true;
+                }
+                else
+                {
                     allow = false;
-
-                ply.EffectsManager.DisableEffect<Sinkhole>();
-                ply.EffectsManager.EnableEffect<Corroding>();
-                ply.SendBroadcast(Plugin.Instance.Config.TeleportMessage, Plugin.Instance.Config.TeleportMessageDuration);
+                }
 
                 return allow;
             }
