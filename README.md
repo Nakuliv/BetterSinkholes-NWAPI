@@ -1,4 +1,4 @@
-# BetterSinkoles-NWAPI
+# BetterSinkholes-NWAPI
 [![GitHub release](https://flat.badgen.net/github/release/Nakuliv/BetterSinkoles-NWAPI)](https://github.com/Nakuliv/BetterSinkoles-NWAPI/releases/)
 ![GitHub downloads](https://flat.badgen.net/github/assets-dl/Nakuliv/BetterSinkoles-NWAPI)
 
