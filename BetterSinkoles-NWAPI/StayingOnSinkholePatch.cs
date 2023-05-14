@@ -17,7 +17,7 @@ namespace BetterSinkoles_NWAPI
             try
             {
                 var ply = Player.Get(player);
-                bool allow = !(ply.Team == Team.SCPs || ply.IsGodModeEnabled);
+                if ((ply.Team == Team.SCPs || ply.IsGodModeEnabled)) return false;
 
                 if (((double)Vector3.Distance(ply.Position, __instance.transform.position) > (double)__instance.MaxDistance * Plugin.Instance.Config.TeleportDistance))
                     return false;
@@ -26,9 +26,8 @@ namespace BetterSinkoles_NWAPI
                     ply.EffectsManager.DisableEffect<Sinkhole>();
                     ply.EffectsManager.EnableEffect<Corroding>();
                     ply.SendBroadcast(Plugin.Instance.Config.TeleportMessage, Plugin.Instance.Config.TeleportMessageDuration);
+                    return true;
                 }
-
-                return allow;
             }
             catch (Exception ex)
             {
