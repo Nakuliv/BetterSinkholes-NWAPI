@@ -1,6 +1,7 @@
 ﻿using CustomPlayerEffects;
 using HarmonyLib;
 using Hazards;
+using NightStars_Plugin.API;
 using PlayerRoles;
 using PluginAPI.Core;
 using System;
@@ -17,14 +18,15 @@ namespace BetterSinkoles_NWAPI
             try
             {
                 var ply = Player.Get(player);
-                if ((ply.Team == Team.SCPs || ply.IsGodModeEnabled)) return false;
+                var crole = ply.getCustomRole();
+                if (ply.Team == Team.SCPs || ply.IsGodModeEnabled) return false;
 
                 if (((double)Vector3.Distance(ply.Position, __instance.transform.position) > (double)__instance.MaxDistance * Plugin.Instance.Config.TeleportDistance))
                     return false;
                 else
                 {
                     ply.EffectsManager.DisableEffect<Sinkhole>();
-                    ply.EffectsManager.EnableEffect<Corroding>();
+                    ply.EffectsManager.EnableEffect<PocketCorroding>();
                     ply.SendBroadcast(Plugin.Instance.Config.TeleportMessage, Plugin.Instance.Config.TeleportMessageDuration);
                     return true;
                 }
