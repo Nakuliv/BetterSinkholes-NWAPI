@@ -18,7 +18,6 @@ namespace BetterSinkoles_NWAPI
             try
             {
                 var ply = Player.Get(player);
-                var crole = ply.getCustomRole();
                 if (ply.Team == Team.SCPs || ply.IsGodModeEnabled) return false;
 
                 if (((double)Vector3.Distance(ply.Position, __instance.transform.position) > (double)__instance.MaxDistance * Plugin.Instance.Config.TeleportDistance))
