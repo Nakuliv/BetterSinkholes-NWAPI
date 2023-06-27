@@ -10,8 +10,6 @@ namespace BetterSinkoles_NWAPI
         private void Load()
         {
             Instance = this;
-
-            //PluginAPI.Events.EventManager.RegisterEvents(this);
             var instance = new Harmony("SinkholePatch");
             instance.PatchAll();
         }
